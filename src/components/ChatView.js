@@ -10,15 +10,15 @@ function ChatView() {
   const selectedImage = useSelector(selectSelectedImage);
   const history = useHistory();
 
+  const exit = () => {
+    history.replace('/chats');
+  };
+
   useEffect(() => {
     if (!selectedImage) {
       exit();
     }
   }, [selectedImage]);
-
-  const exit = () => {
-    history.replace('/chats');
-  };
 
   return (
     <div className='chatView'>
